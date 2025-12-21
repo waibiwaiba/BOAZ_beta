@@ -1,0 +1,22 @@
+#.git
+#venv
+__pycache__
+*.pyc
+*.pyo
+docs
+dist
+# 1. 忽略 git 历史 (非常重要！否则镜像会巨大)
+.git/
+
+# 2. 忽略 IDE 配置
+.vscode/
+
+# 3. 忽略 Python 缓存
+__pycache__/
+
+# 4. 忽略 Docker 管理文件本身
+Dockerfile
+.dockerignore
+
+# 5. 忽略不需要打包进镜像的大型数据集 (视情况而定)
+# data/
