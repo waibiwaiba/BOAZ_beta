@@ -933,11 +933,11 @@ BOOL ChangeDllPath(HMODULE hModule, const wchar_t* newPath) {
 // Declaration of undocumented functions and structures
 
 // https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/ne-processthreadsapi-queue_user_apc_flags
-typedef enum _QUEUE_USER_APC_FLAGS {
-  QUEUE_USER_APC_FLAGS_NONE,
-  QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC,
-  QUEUE_USER_APC_CALLBACK_DATA_CONTEXT
-} QUEUE_USER_APC_FLAGS;
+// typedef enum _QUEUE_USER_APC_FLAGS {
+//   QUEUE_USER_APC_FLAGS_NONE,
+//   QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC,
+//   QUEUE_USER_APC_CALLBACK_DATA_CONTEXT
+// } QUEUE_USER_APC_FLAGS;
 
 
 // typedef ULONG (NTAPI *NtQueueApcThread_t)(HANDLE ThreadHandle, PVOID ApcRoutine, PVOID ApcRoutineContext, PVOID ApcStatusBlock, PVOID ApcReserved);

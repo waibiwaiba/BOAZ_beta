@@ -748,8 +748,8 @@ int main() {
 
 
 
-    LARGE_INTEGER Timeout;
-    Timeout.QuadPart = -99990000;
+    // LARGE_INTEGER Timeout;
+    // Timeout.QuadPart = -99990000;
 
     const char NtWait[] = { 'N','t','W','a','i','t','F','o','r','S','i','n','g','l','e','O','b','j','e','c','t', 0 };
 
@@ -768,7 +768,8 @@ int main() {
     }
 
 
-    NTSTATUS NTWFSOstatus = myNtWaitForSingleObject(hHostThread, FALSE, &Timeout);
+    // NTSTATUS NTWFSOstatus = myNtWaitForSingleObject(hHostThread, FALSE, &Timeout);
+    NTSTATUS NTWFSOstatus = myNtWaitForSingleObject(hHostThread, FALSE, NULL);
     if (!NT_SUCCESS(NTWFSOstatus)) {
         printf("[!] Failed in myNtWaitForSingleObject (%u)\n", GetLastError());
         return 4;

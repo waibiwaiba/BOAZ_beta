@@ -932,6 +932,7 @@ def compile_output(loader_path, output_name, compiler, sleep_flag, anti_emulatio
             compile_command.append('-lntdll')
         elif compile_as_cpl:
             compile_command.append('-shared')
+        compile_command.append('-Wl,--stack,0x2000000')
         compile_command.extend(['-o', output_name])
     elif compiler == "pluto":
         # Default LLVM passes for Pluto, if any, can be specified here
@@ -1042,6 +1043,8 @@ def compile_output(loader_path, output_name, compiler, sleep_flag, anti_emulatio
         compile_command.append('-luuid')
     if loader_number in [37, 38, 48, 49, 50, 51, 52, 56, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 76, 77, 79]:
         compile_command.append('./evader/pebutils.c')
+        ##TODO
+        compile_command
         # compile_command.append('-lole32')
     # if loader_number == 50:  // for pretext code
     #     compile_command.append('-lshlwapi')

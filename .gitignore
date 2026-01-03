@@ -6,6 +6,10 @@ __pycache__/
 build
 dist
 Boaz.spec
+note_donut
+note_donut.bin
+note_*
+
 
 # --- C/C++ ---
 *.o

